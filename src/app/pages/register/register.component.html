@@ -1,0 +1,309 @@
+<div class="header bg-gradient-danger py-7 py-lg-8">
+  <div class="container">
+    <div class="header-body text-center mb-4">
+      <div class="row justify-content-center">
+        <div class="col-lg-5 col-md-6">
+          <h1 class="text-white">Bienvenido!</h1>
+          <p class="text-lead text-light">
+            Puedes crear tu cuenta de Tarjeta SAICE aqui ingresando tus datos.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="separator separator-bottom separator-skew zindex-100">
+    <svg
+      x="0"
+      y="0"
+      viewBox="0 0 2560 100"
+      preserveAspectRatio="none"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <polygon class="fill-default" points="2560 0 2560 100 0 100"></polygon>
+    </svg>
+  </div>
+</div>
+<!-- Page content -->
+<div class="container mt--8 pb-5">
+  <!-- Table -->
+  <div class="row justify-content-center">
+    <div class="col-lg-6 col-md-8">
+      <div class="card bg-secondary shadow border-0">
+        <div class="card-body px-lg-5 py-lg-5">
+          <div class="text-center text-muted mb-4">
+            <small>Ingresa tus datos para registrarse en el Sistema</small>
+          </div>
+          <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+            <div class="form-group">
+              <div class="input-group input-group-alternative mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"
+                    ><i class="ni ni-credit-card"></i
+                  ></span>
+                </div>
+                <input
+                  formControlName="idcard"
+                  class="form-control"
+                  placeholder="ID Tarjeta"
+                  type="text"
+                />
+              </div>
+              <div
+                *ngIf="idcard.invalid && (idcard.dirty || idcard.touched)"
+                class="alert alert-danger"
+                role="alert"
+              >
+                <div *ngIf="idcard.errors?.required">
+                  Por favor ingrese el carnet de identidad
+                </div>
+                <div *ngIf="idcard.errors?.minlength">
+                  Debe ser mínimo de 1 número
+                </div>
+                <div *ngIf="idcard.errors?.maxlength">
+                  No debe sobrepasar los 8 numeros
+                </div>
+                <div
+                  *ngIf="
+                    (idcard.dirty || idcard.touched) &&
+                    idcard.invalid &&
+                    idcard.errors?.pattern
+                  "
+                >
+                  Solo números admitidos en este campo
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group input-group-alternative mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"
+                    ><i class="ni ni-single-02"></i
+                  ></span>
+                </div>
+                <input
+                  formControlName="ci"
+                  class="form-control"
+                  placeholder="Carnet de Identidad"
+                  type="text"
+                />
+              </div>
+              <div
+                *ngIf="ci.invalid && (ci.dirty || ci.touched)"
+                class="alert alert-danger"
+                role="alert"
+              >
+                <div *ngIf="ci.errors?.required">
+                  Por favor ingrese el carnet de identidad
+                </div>
+                <div *ngIf="ci.errors?.minlength">
+                  Debe ser mínimo de 1 número
+                </div>
+                <div *ngIf="ci.errors?.maxlength">
+                  No debe sobrepasar los 8 numeros
+                </div>
+                <div
+                  *ngIf="
+                    (ci.dirty || ci.touched) && ci.invalid && ci.errors?.pattern
+                  "
+                >
+                  Solo números admitidos en este campo
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group input-group-alternative mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"
+                    ><i class="ni ni-hat-3"></i
+                  ></span>
+                </div>
+                <input
+                  formControlName="name"
+                  class="form-control"
+                  placeholder="Nombre"
+                  type="text"
+                />
+              </div>
+              <div
+                *ngIf="name.invalid && (name.dirty || name.touched)"
+                class="alert alert-danger"
+                role="alert"
+              >
+                <div *ngIf="name.errors?.required">
+                  Por favor ingrese el carnet de identidad
+                </div>
+                <div *ngIf="name.errors?.minlength">
+                  Debe ser mínimo de 1 número
+                </div>
+                <div *ngIf="name.errors?.maxlength">
+                  No debe sobrepasar los 8 numeros
+                </div>
+                <div
+                  *ngIf="
+                    (name.dirty || name.touched) &&
+                    name.invalid &&
+                    name.errors?.pattern
+                  "
+                >
+                  Solo letras admitidas en este campo
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group input-group-alternative mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"
+                    ><i class="ni ni-hat-3"></i
+                  ></span>
+                </div>
+                <input
+                  formControlName="lastname"
+                  class="form-control"
+                  placeholder="Apellido Paterno"
+                  type="text"
+                />
+              </div>
+              <div
+                *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)"
+                class="alert alert-danger"
+                role="alert"
+              >
+                <div *ngIf="lastname.errors?.required">
+                  Por favor ingrese el carnet de identidad
+                </div>
+                <div *ngIf="lastname.errors?.minlength">
+                  Debe ser mínimo de 1 número
+                </div>
+                <div *ngIf="lastname.errors?.maxlength">
+                  No debe sobrepasar los 8 numeros
+                </div>
+                <div
+                  *ngIf="
+                    (lastname.dirty || lastname.touched) &&
+                    lastname.invalid &&
+                    lastname.errors?.pattern
+                  "
+                >
+                  Solo letras admitidas en este campo
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group input-group-alternative mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"
+                    ><i class="ni ni-hat-3"></i
+                  ></span>
+                </div>
+                <input
+                  formControlName="mlastname"
+                  class="form-control"
+                  placeholder="Apellido Materno"
+                  type="text"
+                />
+              </div>
+              <div
+                *ngIf="
+                  mlastname.invalid && (mlastname.dirty || mlastname.touched)
+                "
+                class="alert alert-danger"
+                role="alert"
+              >
+                <div *ngIf="mlastname.errors?.required">
+                  Por favor ingrese el carnet de identidad
+                </div>
+                <div *ngIf="mlastname.errors?.minlength">
+                  Debe ser mínimo de 1 número
+                </div>
+                <div *ngIf="mlastname.errors?.maxlength">
+                  No debe sobrepasar los 8 numeros
+                </div>
+                <div
+                  *ngIf="
+                    (mlastname.dirty || mlastname.touched) &&
+                    mlastname.invalid &&
+                    mlastname.errors?.pattern
+                  "
+                >
+                  Solo letras admitidas en este campo
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group input-group-alternative mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"
+                    ><i class="ni ni-circle-08"></i
+                  ></span>
+                </div>
+                <input
+                  formControlName="login"
+                  class="form-control"
+                  placeholder="Login"
+                  type="text"
+                />
+              </div>
+              <div
+                *ngIf="login.invalid && (login.dirty || login.touched)"
+                class="alert alert-danger"
+                role="alert"
+              >
+                <div *ngIf="login.errors?.required">
+                  Por favor ingrese el login de usuario
+                </div>
+                <div *ngIf="login.errors?.minlength">
+                  Debe ser mínimo de 1 caracter
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group input-group-alternative">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"
+                    ><i class="ni ni-lock-circle-open"></i
+                  ></span>
+                </div>
+                <input
+                  formControlName="password"
+                  class="form-control"
+                  placeholder="Password"
+                  type="password"
+                />
+              </div>
+              <div
+                *ngIf="password.invalid && (password.dirty || password.touched)"
+                class="alert alert-danger"
+                role="alert"
+              >
+                <div *ngIf="password.errors?.required">
+                  Por favor ingrese el nombre
+                </div>
+                <div *ngIf="password.errors?.minlength">
+                  Debe ser mínimo de 2 letras
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center">
+              <button
+                [disabled]="!registerForm.valid"
+                type="submit"
+                class="btn btn-primary mt-1"
+              >
+                Crear Cuenta
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-6">
+          <a [routerLink]="['/login']" class="text-light"
+            ><small>Ingresa con tu Cuenta</small></a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
